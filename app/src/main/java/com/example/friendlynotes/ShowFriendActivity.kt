@@ -19,7 +19,6 @@ class ShowFriendActivity : AppCompatActivity() {
         if(result!=null)
         {
             val repository=LocalRepository(this.baseContext)
-            println("ID of Friend: "+result.ID)
             repository.deleteFriend(result.ID)
             repository.addFriend(result)
 
@@ -42,6 +41,7 @@ class ShowFriendActivity : AppCompatActivity() {
         val friendString: String? = intent!!.getStringExtra("friend")
         val friend: Friend = gson.fromJson(friendString, Friend::class.java)
 
+        binding.imageViewPhoto.setImageBitmap(friend.photo?.decodeBase64Image())
         binding.textFirstname.text = friend.firstname
         binding.textLastname.text = friend.lastname
         binding.labelBirthday.hideIfNull(friend.birthday?.toString(), this, findViewById(R.id.linearLayoutBirthday))
@@ -52,6 +52,7 @@ class ShowFriendActivity : AppCompatActivity() {
         binding.labelLikes.hideIfNull(friend.likes, this)
         binding.labelDislikes.hideIfNull(friend.dislikes, this)
         binding.labelNotes.hideIfNull(friend.notes, this)
+        binding.imageViewPhoto.drawable
 
         binding.buttonEdit.setOnClickListener {
             getContentLauncherEdit.launch(friend)

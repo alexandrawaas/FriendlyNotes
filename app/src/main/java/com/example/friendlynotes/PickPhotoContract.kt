@@ -13,28 +13,15 @@ import java.io.ByteArrayOutputStream
 import java.net.URI
 import java.util.*
 
-class PickPhotoContract: ActivityResultContract<Unit, String?>() {
+class PickPhotoContract: ActivityResultContract<Unit, Uri?>() {
     override fun createIntent(context: Context, input: Unit?): Intent {
-        val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
-            type = "image/*"
-        }
+        val intent = Intent(Intent.ACTION_GET_CONTENT).apply {type = "image/*"}
         return intent
     }
 
-    override fun parseResult(resultCode: Int, intent: Intent?): String? {
+    override fun parseResult(resultCode: Int, intent: Intent?): Uri? {
         if (resultCode != Activity.RESULT_OK) return null
-        val thumbnail: Bitmap? = intent?.getParcelableExtra("data")
-        val fullPhotoUri: Uri? = intent?.data
-        var result: String = ""
-
-        if(thumbnail != null)
-        { val baos = ByteArrayOutputStream()
-        thumbnail.compress(Bitmap.CompressFormat.PNG, 100, baos)
-        val b = baos.toByteArray()
-        result = Base64.encodeToString(b, Base64.DEFAULT)}
-
-        return result
-
+        return intent?.data
     }
 
 }

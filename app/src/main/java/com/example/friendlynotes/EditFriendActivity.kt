@@ -1,27 +1,52 @@
 package com.example.friendlynotes
 
-import android.app.Activity
 import android.content.Intent
 import android.graphics.Bitmap
+import android.graphics.ImageDecoder
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
-import android.util.Log
+import android.provider.MediaStore
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
-import androidx.activity.result.contract.ActivityResultContracts
+import androidx.appcompat.app.AppCompatActivity
 import com.example.friendlynotes.databinding.ActivityEditFriendBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.Gson
-import java.lang.NumberFormatException
+import kotlin.properties.Delegates
+
 
 class EditFriendActivity : AppCompatActivity() {
 
+    private lateinit var binding:ActivityEditFriendBinding
+    private var currentBitmap:Bitmap? by Delegates.observable(null) {
+        property, old, new ->
+        binding.imageView.setImageBitmap(new)
+    }
+
     private var getContentLauncherEdit = registerForActivityResult(PickPhotoContract())
-    { result: String? ->
+    { result: Uri? ->
         if (result != null) {
-            println("Hello Image!")
-            
+            val bitmap: Bitmap? = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.P) {
+                ImageDecoder.decodeBitmap(ImageDecoder.createSource(this@EditFriendActivity.contentResolver, result))
+            }
+            else
+            {
+                MediaStore.Images.Media.getBitmap(this@EditFriendActivity.contentResolver, result)
+            }
+
+            if(bitmap==null)
+            {
+                //TODO: Fehlermeldung
+                println("FEHLER")
+                return@registerForActivityResult;
+            }
+
+            currentBitmap = bitmap.encodeBase64()?.decodeBase64Image()!!
+        }
+        else
+        {
+            println("FEHLER") //TODO: Fehlermeldung
         }
     }
 
@@ -30,7 +55,7 @@ class EditFriendActivity : AppCompatActivity() {
 
         setResult(RESULT_CANCELED)
 
-        val binding = ActivityEditFriendBinding.inflate(layoutInflater)
+        binding = ActivityEditFriendBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         var friendString = intent!!.getStringExtra("friend")
@@ -38,6 +63,7 @@ class EditFriendActivity : AppCompatActivity() {
         var friend: Friend? = gson.fromJson(friendString, Friend::class.java)
 
         if (friend != null) {
+            currentBitmap=friend.photo?.decodeBase64Image()
             binding.textfieldAddFirstname.editText?.setText(friend.firstname)
             binding.textfieldAddLastname.editText?.setText(friend.lastname.nullToString())
             if (friend.birthday != null) {
@@ -85,6 +111,8 @@ class EditFriendActivity : AppCompatActivity() {
                 dialogFirstname.show()
             } else {
                 val intent = Intent()
+
+                friend.photo=currentBitmap?.encodeBase64()
 
                 friend.firstname = binding.textfieldAddFirstname.editText?.text.toString().trim()
                 friend.lastname = binding.textfieldAddLastname.editText?.text.toString().trim()

@@ -60,12 +60,10 @@ class MainActivity : AppCompatActivity() {
             getContentLauncherAdd.launch(null)
         }
 
-        adapter.updateRecyclerView()
-
         adapter.setOnItemClickListener(object : OnItemClickListener {
             override fun onItemClick(position: Int) {
 
-                val friend = repository.getFriend(position)
+                val friend = adapter.listFiltered.get(position)
                 val gson = Gson()
                 val friendString : String = gson.toJson(friend)
 
@@ -96,7 +94,6 @@ class MainActivity : AppCompatActivity() {
 
         searchView.setOnCloseListener {
             searchView.isIconified = false
-            searchItem.collapseActionView()
             searchView.setQuery("", true)
             true
         }

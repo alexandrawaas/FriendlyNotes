@@ -7,8 +7,6 @@ import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 
 class MainAdapter(val repository:Repository): RecyclerView.Adapter<ViewHolder>() {
-    // private val dataSet:MutableList<Friend> = mutableListOf()
-    // fun getDataSet():List<Friend> = dataSet
     var list: ArrayList<Friend> = repository.getList()
     var listFiltered: ArrayList<Friend> = list
 

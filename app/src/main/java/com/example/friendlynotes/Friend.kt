@@ -11,7 +11,8 @@ data class Friend (var firstname: String,
                    var hobbies: String?=null,
                    var likes: String? = null,
                    var dislikes: String? = null,
-                   var notes: String? = null)
+                   var notes: String? = null,
+                   var photo: String? = null)
 {
     val ID:UUID = UUID.randomUUID()
 
