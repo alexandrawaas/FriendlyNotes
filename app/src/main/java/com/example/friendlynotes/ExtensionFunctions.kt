@@ -8,7 +8,6 @@ import android.util.Base64
 import android.view.View
 import com.google.android.material.textview.MaterialTextView
 import java.io.ByteArrayOutputStream
-import java.util.*
 
 fun Any?.nullToString():String = this?.toString() ?: ""
 
@@ -32,7 +31,7 @@ fun MaterialTextView.hideIfNull(text: String?, activity: Activity, vararg views:
 fun Bitmap.encodeBase64():String?
 {
     val byteArrayOutputStream: ByteArrayOutputStream = ByteArrayOutputStream()
-    if(this.byteCount > 1000) this.compress(Bitmap.CompressFormat.JPEG, 10, byteArrayOutputStream)
+    if(this.byteCount > 1000) this.compress(Bitmap.CompressFormat.JPEG, 20, byteArrayOutputStream)
         else
     {
             this.compress(Bitmap.CompressFormat.JPEG, 50, byteArrayOutputStream)

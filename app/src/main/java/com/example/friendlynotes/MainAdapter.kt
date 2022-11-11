@@ -2,8 +2,6 @@ package com.example.friendlynotes
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import android.widget.Filter
-import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
 
 class MainAdapter(val repository:Repository): RecyclerView.Adapter<ViewHolder>() {
@@ -24,6 +22,8 @@ class MainAdapter(val repository:Repository): RecyclerView.Adapter<ViewHolder>()
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.firstname.text = listFiltered.get(position).firstname
         holder.lastname.text = listFiltered.get(position).lastname
+        val img = listFiltered.get(position).photo?.decodeBase64Image()
+        if (img != null) holder.profilePicture.setImageBitmap(img)
     }
 
     override fun getItemCount() = listFiltered.size

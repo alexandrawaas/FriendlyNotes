@@ -9,12 +9,10 @@ import android.os.Bundle
 import android.provider.CalendarContract
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.example.friendlynotes.databinding.ActivityShowFriendBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.Gson
 import java.util.*
-import kotlin.math.abs
 
 class ShowFriendActivity : AppCompatActivity() {
 
@@ -46,15 +44,8 @@ class ShowFriendActivity : AppCompatActivity() {
         val friend: Friend = gson.fromJson(friendString, Friend::class.java)
 
         val bitmap: Bitmap? = friend.photo?.decodeBase64Image()
-        if (bitmap != null)
-        {
-            val crop = abs((bitmap.width - bitmap.height) / 2)
-            println(crop)
-            //val cropImg: Bitmap = Bitmap.createBitmap(bitmap, crop, 0, 500, 500)
-            val img = RoundedBitmapDrawableFactory.create(resources, bitmap)
-            img.isCircular=true
-            binding.imageViewPhotoProfile.setImageDrawable(img)
-        }
+        if (bitmap != null) binding.imageViewPhotoProfile.setImageBitmap(bitmap)
+
         binding.textFirstname.text = friend.firstname
         binding.textLastname.text = friend.lastname
         binding.labelBirthday.hideIfNull(friend.birthday?.toString(), this, findViewById(R.id.linearLayoutBirthday))
