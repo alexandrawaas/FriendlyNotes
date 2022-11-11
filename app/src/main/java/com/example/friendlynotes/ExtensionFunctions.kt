@@ -3,6 +3,7 @@ package com.example.friendlynotes
 import android.app.Activity
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
+import android.media.ThumbnailUtils
 import android.util.Base64
 import android.view.View
 import com.google.android.material.textview.MaterialTextView
@@ -41,7 +42,9 @@ fun Bitmap.encodeBase64():String?
 
 fun String.decodeBase64Image():Bitmap?
 {
-    //TODO: null bedeutng throw?
+    //TODO: null Bedeutung throw?
     val imageByteArray:ByteArray=Base64.decode(this, 0)
-    return BitmapFactory.decodeByteArray(imageByteArray, 0, imageByteArray.size)
+    val bitmap: Bitmap = BitmapFactory.decodeByteArray(imageByteArray, 0, imageByteArray.size)
+    val squareDimension = bitmap.width.coerceAtMost(bitmap.height)
+    return ThumbnailUtils.extractThumbnail(bitmap, squareDimension, squareDimension)
 }

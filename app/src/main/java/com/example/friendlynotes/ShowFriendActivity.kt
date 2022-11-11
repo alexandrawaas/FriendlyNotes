@@ -1,5 +1,6 @@
 package com.example.friendlynotes
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.content.Intent.ACTION_DIAL
 import android.graphics.Bitmap
@@ -17,6 +18,7 @@ import kotlin.math.abs
 
 class ShowFriendActivity : AppCompatActivity() {
 
+    @SuppressLint("SuspiciousIndentation")
     private var getContentLauncherEdit=registerForActivityResult(EditFriendContract())
     { result ->
         if(result!=null)
