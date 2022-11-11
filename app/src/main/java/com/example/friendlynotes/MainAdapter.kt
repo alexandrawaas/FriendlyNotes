@@ -39,13 +39,9 @@ class MainAdapter(val repository:Repository): RecyclerView.Adapter<ViewHolder>()
 
     public fun filter(constraint: CharSequence?)
     {
-        val charString = constraint?.toString()?.lowercase()?.trim() ?: ""
-        if (charString.isEmpty())
-        {
-            listFiltered = list
-        }
-        else
-        {
+        listFiltered = if(constraint==null) list
+        else {
+            val charString = constraint.toString().lowercase().trim()
             val filteredListFilled = ArrayList<Friend>()
             list.filter {
                 (it.firstname.lowercase().contains(charString)) or
@@ -55,7 +51,7 @@ class MainAdapter(val repository:Repository): RecyclerView.Adapter<ViewHolder>()
                     filteredListFilled.add(it)
                     println(filteredListFilled)
                 }
-            listFiltered = filteredListFilled
+            filteredListFilled
         }
 
         notifyDataSetChanged()

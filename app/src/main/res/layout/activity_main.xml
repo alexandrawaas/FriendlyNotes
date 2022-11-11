@@ -61,7 +61,7 @@
                 android:layout_gravity="bottom|end"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:contentDescription="Add new friend"
+                android:contentDescription="@string/add_new_friend"
                 app:efab_closingAnticipateTension="0"
                 app:efab_color="#FF7043"
                 app:efab_iconAnimationRotationDeg="0" />

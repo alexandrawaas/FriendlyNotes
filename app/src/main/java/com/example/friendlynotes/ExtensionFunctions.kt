@@ -31,7 +31,11 @@ fun MaterialTextView.hideIfNull(text: String?, activity: Activity, vararg views:
 fun Bitmap.encodeBase64():String?
 {
     val byteArrayOutputStream: ByteArrayOutputStream = ByteArrayOutputStream()
-    this.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream)
+    if(this.byteCount > 1000) this.compress(Bitmap.CompressFormat.JPEG, 10, byteArrayOutputStream)
+        else
+    {
+            this.compress(Bitmap.CompressFormat.JPEG, 50, byteArrayOutputStream)
+    }
     return Base64.encodeToString(byteArrayOutputStream.toByteArray(), Base64.DEFAULT)
 }
 

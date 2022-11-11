@@ -22,6 +22,12 @@ class MainActivity : AppCompatActivity() {
     lateinit var recyclerView: RecyclerView
     lateinit var adapter:MainAdapter
     lateinit var repository: Repository
+    lateinit var binding:ActivityMainBinding
+
+    companion object
+    {
+        private var query:String?=null
+    }
 
     private var getContentLauncherAdd=registerForActivityResult(EditFriendContract())
     { result:Friend? ->
@@ -41,9 +47,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding=ActivityMainBinding.inflate(layoutInflater)
+        binding=ActivityMainBinding.inflate(layoutInflater);
 
         setContentView(binding.root)
+        binding.topAppBar.menu
 
         setSupportActionBar(binding.topAppBar)
 
@@ -80,7 +87,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
         menuInflater.inflate(R.menu.top_app_bar, menu)
-
 
         menu?.findItem(R.id.imprint)?.setOnMenuItemClickListener{ menuItem ->
             val intent: Intent = Intent(this, ImprintActivity::class.java)
@@ -122,15 +128,20 @@ class MainActivity : AppCompatActivity() {
 
             override fun onQueryTextChange(newText: String?): Boolean {
                 adapter.filter(newText)
+                query=newText
                 return false
             }
         })
+
+        println(menu)
 
         return super.onCreateOptionsMenu(menu)
     }
 
     override fun onResume() {
         super.onResume()
+
         adapter.updateRecyclerView()
+        adapter.filter(MainActivity.Companion.query)
     }
 }

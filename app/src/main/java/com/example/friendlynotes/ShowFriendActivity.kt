@@ -2,15 +2,18 @@ package com.example.friendlynotes
 
 import android.content.Intent
 import android.content.Intent.ACTION_DIAL
+import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.CalendarContract
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory
 import com.example.friendlynotes.databinding.ActivityShowFriendBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.Gson
 import java.util.*
+import kotlin.math.abs
 
 class ShowFriendActivity : AppCompatActivity() {
 
@@ -23,8 +26,7 @@ class ShowFriendActivity : AppCompatActivity() {
             repository.addFriend(result)
 
             val gson = Gson()
-            val intentRefresh: Intent =
-                Intent(this@ShowFriendActivity, ShowFriendActivity::class.java)
+            val intentRefresh: Intent = Intent(this@ShowFriendActivity, ShowFriendActivity::class.java)
                 intentRefresh.putExtra("friend", gson.toJson(result))
                 finish()
                 startActivity(intentRefresh)
@@ -41,7 +43,16 @@ class ShowFriendActivity : AppCompatActivity() {
         val friendString: String? = intent!!.getStringExtra("friend")
         val friend: Friend = gson.fromJson(friendString, Friend::class.java)
 
-        binding.imageViewPhoto.setImageBitmap(friend.photo?.decodeBase64Image())
+        val bitmap: Bitmap? = friend.photo?.decodeBase64Image()
+        if (bitmap != null)
+        {
+            val crop = abs((bitmap.width - bitmap.height) / 2)
+            println(crop)
+            //val cropImg: Bitmap = Bitmap.createBitmap(bitmap, crop, 0, 500, 500)
+            val img = RoundedBitmapDrawableFactory.create(resources, bitmap)
+            img.isCircular=true
+            binding.imageViewPhotoProfile.setImageDrawable(img)
+        }
         binding.textFirstname.text = friend.firstname
         binding.textLastname.text = friend.lastname
         binding.labelBirthday.hideIfNull(friend.birthday?.toString(), this, findViewById(R.id.linearLayoutBirthday))
@@ -52,7 +63,7 @@ class ShowFriendActivity : AppCompatActivity() {
         binding.labelLikes.hideIfNull(friend.likes, this)
         binding.labelDislikes.hideIfNull(friend.dislikes, this)
         binding.labelNotes.hideIfNull(friend.notes, this)
-        binding.imageViewPhoto.drawable
+        binding.imageViewPhotoProfile.drawable
 
         binding.buttonEdit.setOnClickListener {
             getContentLauncherEdit.launch(friend)

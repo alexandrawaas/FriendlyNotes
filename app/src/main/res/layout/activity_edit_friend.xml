@@ -82,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:hint="Last Name">
+                android:hint="@string/last_name">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -96,7 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="15dp"
-                android:text="Birthday" />
+                android:text="@string/birthday" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -110,7 +110,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:hint="Day">
+                    android:hint="@string/day">
 
                     <AutoCompleteTextView
                         android:layout_width="match_parent"
@@ -126,7 +126,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1.2"
-                    android:hint="Month">
+                    android:hint="@string/month">
 
                     <AutoCompleteTextView
                         android:layout_width="match_parent"
@@ -143,7 +143,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:layout_weight="1"
-                    android:hint="Year">
+                    android:hint="@string/year">
 
                     <com.google.android.material.textfield.TextInputEditText
                         android:layout_width="match_parent"
@@ -160,7 +160,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="15dp"
-                android:text="Contact Data" />
+                android:text="@string/contact_data" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textfieldAddPhoneNumber"
@@ -168,7 +168,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:hint="Phone Number">
+                android:hint="@string/phone_number">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -184,7 +184,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:hint="Address">
+                android:hint="@string/address">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -199,7 +199,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="5dp"
                 android:layout_marginTop="15dp"
-                android:text="Personal Notes" />
+                android:text="@string/personal_notes" />
 
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textfieldAddOccupation"
@@ -207,7 +207,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:hint="Occupation">
+                android:hint="@string/occupation">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -221,7 +221,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:hint="Hobbies">
+                android:hint="@string/hobbies">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -235,7 +235,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:hint="This friend likes...">
+                android:hint="@string/this_friend_likes">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -249,7 +249,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:hint="This friend dislikes...">
+                android:hint="@string/this_friend_dislikes">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -263,7 +263,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:hint="Notes">
+                android:hint="@string/notes">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -294,7 +294,7 @@
                 android:layout_gravity="bottom|end"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:contentDescription="Save changes"
+                android:contentDescription="@string/save_changes"
                 app:efab_closingAnticipateTension="0"
                 app:efab_color="#FF7043"
                 app:efab_icon="@drawable/ic_save_white_24dp"

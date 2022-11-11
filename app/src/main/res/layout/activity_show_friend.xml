@@ -22,7 +22,7 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="" />
+            app:title="Friend Profile" />
 
     </com.google.android.material.appbar.AppBarLayout>
 
@@ -47,16 +47,17 @@
                 android:orientation="vertical"
                 android:padding="20dp">
 
-                <ImageView
-                    android:id="@+id/image_view_photo"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/image_view_photo_profile"
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
                     />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:gravity="start"
+                    android:gravity="center_horizontal"
                     android:orientation="horizontal"
                     tools:layout_editor_absoluteX="20dp"
                     tools:layout_editor_absoluteY="20dp">
@@ -67,7 +68,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="5dp"
                         android:layout_marginBottom="20dp"
-                        android:text="Firstname"
+                        android:text="@string/firstname"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -77,7 +78,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginHorizontal="0dp"
                         android:layout_marginBottom="20dp"
-                        android:text="Lastname"
+                        android:text="@string/lastname"
                         android:textSize="20sp"
                         android:textStyle="bold" />
 
@@ -101,7 +102,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="5dp"
                             android:labelFor="@id/text_birthday"
-                            android:text="Birthday" />
+                            android:text="@string/birthday" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/text_birthday"
@@ -109,7 +110,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="5dp"
                             android:layout_marginBottom="15dp"
-                            android:text="Birthday"
+                            android:text="@string/birthday"
                             android:textSize="18sp" />
                     </LinearLayout>
 
@@ -146,7 +147,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="5dp"
                             android:labelFor="@id/text_address"
-                            android:text="Address" />
+                            android:text="@string/address" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/text_address"
@@ -154,7 +155,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="5dp"
                             android:layout_marginBottom="15dp"
-                            android:text="Address"
+                            android:text="@string/address"
                             android:textSize="18sp" />
                     </LinearLayout>
 
@@ -191,7 +192,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="5dp"
                             android:labelFor="@id/text_phone_number"
-                            android:text="Phone Number" />
+                            android:text="@string/phone_number" />
 
                         <com.google.android.material.textview.MaterialTextView
                             android:id="@+id/text_phone_number"
@@ -199,7 +200,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginHorizontal="5dp"
                             android:layout_marginBottom="15dp"
-                            android:text="Phone Number"
+                            android:text="@string/phone_number"
                             android:textSize="18sp" />
                     </LinearLayout>
 
@@ -225,7 +226,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:labelFor="@id/textOccupation"
-                    android:text="Occupation" />
+                    android:text="@string/occupation" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textOccupation"
@@ -233,7 +234,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:layout_marginBottom="15dp"
-                    android:text="Occupation"
+                    android:text="@string/occupation"
                     android:textSize="18sp" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -242,7 +243,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:labelFor="@id/text_hobbies"
-                    android:text="Hobbies" />
+                    android:text="@string/hobbies" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/text_hobbies"
@@ -250,7 +251,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:layout_marginBottom="15dp"
-                    android:text="Hobbies"
+                    android:text="@string/hobbies"
                     android:textSize="18sp" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -259,7 +260,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:labelFor="@id/textLikes"
-                    android:text="Likes" />
+                    android:text="@string/likes" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textLikes"
@@ -267,7 +268,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:layout_marginBottom="15dp"
-                    android:text="Likes"
+                    android:text="@string/likes"
                     android:textSize="18sp" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -276,7 +277,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:labelFor="@id/textDislikes"
-                    android:text="Dislikes" />
+                    android:text="@string/dislikes" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textDislikes"
@@ -284,7 +285,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:layout_marginBottom="15dp"
-                    android:text="Dislikes"
+                    android:text="@string/dislikes"
                     android:textSize="18sp" />
 
                 <com.google.android.material.textview.MaterialTextView
@@ -293,7 +294,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:labelFor="@id/textNotes"
-                    android:text="Notes" />
+                    android:text="@string/notes" />
 
                 <com.google.android.material.textview.MaterialTextView
                     android:id="@+id/textNotes"
@@ -301,7 +302,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="5dp"
                     android:layout_marginBottom="15dp"
-                    android:text="Notes"
+                    android:text="@string/notes"
                     android:textSize="18sp" />
 
 
@@ -321,7 +322,7 @@
                 android:layout_gravity="bottom|end"
                 android:layout_marginEnd="16dp"
                 android:layout_marginBottom="16dp"
-                android:contentDescription="Edit or Delete this Friend"
+                android:contentDescription="@string/edit_or_delete_this_friend"
                 app:efab_closingAnticipateTension="0"
                 app:efab_color="#FF7043"
                 app:efab_icon="@drawable/ic_edit_white_24dp"
@@ -331,7 +332,7 @@
                 android:id="@+id/buttonEdit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="Edit this Friend"
+                android:contentDescription="@string/edit_this_friend"
                 app:fab_color="#FF8A65"
                 app:fab_icon="@drawable/ic_edit_note_white_24dp" />
 
@@ -339,7 +340,7 @@
                 android:id="@+id/buttonDelete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:contentDescription="Delete this Friend"
+                android:contentDescription="@string/delete_this_friend"
                 app:fab_color="#FF8A65"
                 app:fab_icon="@drawable/ic_delete_white_24dp" />
 

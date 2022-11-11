@@ -1,3 +1,32 @@
 <resources>
     <string name="app_name">FriendlyNotes</string>
+    <string name="birthday">Birthday</string>
+    <string name="address">Address</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="occupation">Occupation</string>
+    <string name="hobbies">Hobbies</string>
+    <string name="likes">Likes</string>
+    <string name="dislikes">Dislikes</string>
+    <string name="notes">Notes</string>
+    <string name="edit_or_delete_this_friend">Edit or Delete this Friend</string>
+    <string name="edit_this_friend">Edit this Friend</string>
+    <string name="delete_this_friend">Delete this Friend</string>
+    <string name="last_name">Last Name</string>
+    <string name="day">Day</string>
+    <string name="month">Month</string>
+    <string name="year">Year</string>
+    <string name="contact_data">Contact Data</string>
+    <string name="personal_notes">Personal Notes</string>
+    <string name="this_friend_likes">This friend likes...</string>
+    <string name="this_friend_dislikes">This friend dislikes...</string>
+    <string name="save_changes">Save changes</string>
+    <string name="firstname">Firstname</string>
+    <string name="lastname">Lastname</string>
+    <string name="add_new_friend">Add new friend</string>
+    <string name="version_number">Version 1.0.0</string>
+    <string name="developer">Developer</string>
+    <string name="licence">Licence</string>
+    <string name="welcome_title">Welcome!</string>
+    <string name="welcome_text">FriendlyNotes is a simple tool to help you manage your friendships.</string>
+    <string name="button_get_started">Get started</string>
 </resources>
