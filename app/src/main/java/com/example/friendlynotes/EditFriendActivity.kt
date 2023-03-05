@@ -10,6 +10,8 @@ import android.provider.MediaStore
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.res.ResourcesCompat
+import androidx.core.graphics.drawable.toBitmap
 import com.example.friendlynotes.databinding.ActivityEditFriendBinding
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.google.gson.Gson
@@ -21,7 +23,7 @@ class EditFriendActivity : AppCompatActivity() {
     private lateinit var binding:ActivityEditFriendBinding
     private var currentBitmap:Bitmap? by Delegates.observable(null) {
         property, old, new ->
-        binding.imageView.setImageBitmap(new)
+        binding.imageViewPhotoProfile.setImageBitmap(new)
     }
 
     private var getContentLauncherEdit = registerForActivityResult(PickPhotoContract())
@@ -92,7 +94,7 @@ class EditFriendActivity : AppCompatActivity() {
         (binding.textfieldAddMonth.editText as? AutoCompleteTextView)?.setAdapter(monthAdapter)
 
 
-        binding.buttonAddPhoto.setOnClickListener {
+        binding.cardViewForImage.setOnClickListener {
             getContentLauncherEdit.launch(null)
         }
 
@@ -113,7 +115,7 @@ class EditFriendActivity : AppCompatActivity() {
                 val intent = Intent()
 
                 friend.photo=currentBitmap?.encodeBase64()
-
+                if (currentBitmap==null) currentBitmap = ResourcesCompat.getDrawable(resources, R.drawable.user, null)?.toBitmap()
                 friend.firstname = binding.textfieldAddFirstname.editText?.text.toString().trim()
                 friend.lastname = binding.textfieldAddLastname.editText?.text.toString().trim()
 

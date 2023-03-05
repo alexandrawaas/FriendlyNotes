@@ -35,6 +35,7 @@ class MainActivity : AppCompatActivity() {
         {
             repository.addFriend(result)
             adapter.updateRecyclerView()
+            println("updated rview")
 
             val gson = Gson()
             val intentRefresh: Intent =

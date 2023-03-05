@@ -2,6 +2,7 @@ package com.example.friendlynotes
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.res.ResourcesCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class MainAdapter(val repository:Repository): RecyclerView.Adapter<ViewHolder>() {
@@ -23,6 +24,7 @@ class MainAdapter(val repository:Repository): RecyclerView.Adapter<ViewHolder>()
         holder.firstname.text = listFiltered.get(position).firstname
         holder.lastname.text = listFiltered.get(position).lastname
         val img = listFiltered.get(position).photo?.decodeBase64Image()
+        println(img.toString()+" hello")
         if (img != null) holder.profilePicture.setImageBitmap(img)
     }
 

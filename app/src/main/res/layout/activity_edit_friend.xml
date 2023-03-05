@@ -41,17 +41,27 @@
             android:orientation="vertical"
             android:padding="20dp">
 
-            <ImageView
-                android:id="@+id/imageView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                tools:srcCompat="@tools:sample/avatars" />
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardViewForImage"
+                android:layout_width="180dp"
+                android:layout_height="180dp"
+                app:cardCornerRadius="180dp"
+                android:innerRadius="0dp"
+                android:layout_marginBottom="20dp"
+                android:layout_gravity="center_horizontal"
+                android:shape="ring"
+                android:clickable="true"
+                android:focusable="true">
 
-            <Button
-                android:id="@+id/buttonAddPhoto"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Add Photo" />
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/image_view_photo_profile"
+                    android:layout_width="180dp"
+                    android:layout_height="180dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/user"
+                    />
+
+            </androidx.cardview.widget.CardView>
 
             <com.google.android.material.textview.MaterialTextView
                 android:id="@+id/labelName"
