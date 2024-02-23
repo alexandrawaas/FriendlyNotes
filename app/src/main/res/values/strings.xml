@@ -10,6 +10,7 @@
     <string name="edit_or_delete_this_friend">Edit or Delete this Friend</string>
     <string name="edit_this_friend">Edit this Friend</string>
     <string name="delete_this_friend">Delete this Friend</string>
+    <string name="first_name">First Name*</string>
     <string name="last_name">Last Name</string>
     <string name="day">Day</string>
     <string name="month">Month</string>
@@ -29,4 +30,19 @@
     <string name="welcome_text">FriendlyNotes is a simple tool to help you manage your friendships.</string>
     <string name="button_get_started">Get started</string>
     <string name="address">Address</string>
+    <string name="title_edit_friend">Edit Friend</string>
+    <string name="about">About</string>
+    <string name="title_show_friend">Friend Profile</string>
+    <string name="dialogue_title_delete">Delete Friend</string>
+    <string name="dialogue_text_delete">Do you really want to delete this friend from FriendlyNotes?</string>
+    <string name="dialogue_button_delete">Delete</string>
+    <string name="dialogue_button_cancel">Cancel</string>
+    <string name="dialogue_title_cancel_edit">Cancel</string>
+    <string name="dialogue_text_cancel_edit">Do you really want to return? Your edits will not be saved.</string>
+    <string name="dialogue_button_stay">Stay</string>
+    <string name="dialogue_button_discard">Discard</string>
+    <string name="dialogue_title_firstname">First name is missing</string>
+    <string name="dialogue_text_firstname">Please insert a first name.</string>
+    <string name="dialogue_button_ok">OK</string>
+
 </resources>

@@ -16,8 +16,8 @@
 
     <item
         android:id="@+id/imprint"
-        android:title="About"
         android:contentDescription="imprint"
+        android:title="@string/about"
         app:showAsAction="never" />
 
 </menu>

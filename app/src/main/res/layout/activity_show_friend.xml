@@ -22,7 +22,7 @@
             style="@style/Widget.MaterialComponents.Toolbar.Primary"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            app:title="Friend Profile" />
+            app:title="@string/title_show_friend" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

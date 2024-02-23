@@ -100,11 +100,10 @@ class EditFriendActivity : AppCompatActivity() {
 
 
         val dialogFirstname = MaterialAlertDialogBuilder(this)
-            .setTitle("First name is missing")
-            .setMessage("Please insert your friend's first name.")
+            .setTitle(resources.getString(R.string.dialogue_title_firstname))
+            .setMessage(resources.getString(R.string.dialogue_text_firstname))
 
-            .setPositiveButton("OK") { dialog, which ->
-                //binding.textfieldAddFirstname.boxStrokeColor= getColor(R.color.purple_500)
+            .setPositiveButton(resources.getString(R.string.dialogue_button_ok)) { dialog, which ->
             }
 
         binding.buttonSave.setOnClickListener {
@@ -156,36 +155,16 @@ class EditFriendActivity : AppCompatActivity() {
     override fun onBackPressed() {
 
         val dialogCancel = MaterialAlertDialogBuilder(this)
-            .setTitle("Cancel")
-            .setMessage("Do you really want to return? Your edits will not be saved.")
+            .setTitle(resources.getString(R.string.dialogue_title_cancel_edit))
+            .setMessage(resources.getString(R.string.dialogue_text_cancel_edit))
 
-            .setPositiveButton("Discard") { dialog, which ->
+            .setPositiveButton(resources.getString(R.string.dialogue_button_discard)) { dialog, which ->
                 super.onBackPressed()
             }
 
-            .setNegativeButton("Stay") { dialog, which ->
+            .setNegativeButton(resources.getString(R.string.dialogue_button_stay)) { dialog, which ->
             }
 
         dialogCancel.show()
     }
 }
-
-    /*
-    fun selectImage() {
-        val intent = Intent(Intent.ACTION_GET_CONTENT).apply {
-            type = "image/*"
-        }
-        if (intent.resolveActivity(packageManager) != null) {
-            startActivityForResult(intent, 1)
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent) {
-        if (requestCode == 1 && resultCode == Activity.RESULT_OK) {
-            val thumbnail: Bitmap = data.getParcelableExtra("data")
-            val fullPhotoUri: Uri = data.data
-            // Do work with photo saved at fullPhotoUri
-            ...
-        }
-    }
-    */

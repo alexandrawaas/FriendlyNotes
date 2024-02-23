@@ -64,13 +64,13 @@ class ShowFriendActivity : AppCompatActivity() {
 
 
         val dialogDelete = MaterialAlertDialogBuilder(this)
-            .setTitle("Delete Friend")
-            .setMessage("Do you really want to delete this friend from FriendlyNotes?")
+            .setTitle(resources.getString(R.string.dialogue_title_delete))
+            .setMessage(resources.getString(R.string.dialogue_text_delete))
 
-            .setNegativeButton("Cancel") { dialog, which ->
+            .setNegativeButton(resources.getString(R.string.dialogue_button_cancel)) { dialog, which ->
 
             }
-            .setPositiveButton("Delete") { dialog, which ->
+            .setPositiveButton(resources.getString(R.string.dialogue_button_delete)) { dialog, which ->
                 val repository=LocalRepository(this.baseContext)
                 repository.deleteFriend(friend.ID)
                 finish()
