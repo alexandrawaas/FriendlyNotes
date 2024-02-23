@@ -21,3 +21,7 @@ If a phone number, address or birthday is saved, you can directly call the frien
 <p align="center">
 <img src="https://github.com/alexandrawaas/FriendlyNotes/blob/main/screenshots/FriendlyNotesDemoVideo.gif" width="100%" padding="10px 10px 10px 10px">
 </p>
+
+## Contact
+
+If you have any questions about this project, feel free to contact me. I will answer as fast as I can.
