@@ -4,7 +4,7 @@ FriendlyNotes is a digital friendship book app where you can store all your note
 Note down what your friend likes or dislikes, what hobbies they pursue or which idea for a christmas present you have. Or let your friend fill in the form themselves - it is all up to you.
 <br>
 <br>
-This app was created as a native Android app in Kotlin using Android Studio and Gson.
+I developed Friendlynotes as a native Android app in Kotlin using Android Studio and Gson. The app was created during my second semester as a personal project. There are still some bugs I am planning to fix in the near future.
 <br>
 <br>
 
