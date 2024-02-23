@@ -13,12 +13,16 @@ class ImprintActivity : AppCompatActivity() {
         setContentView(R.layout.activity_imprint)
 
         val buttonDeveloper: Button = findViewById(R.id.buttonDeveloper)
-
-        val intent= Intent(this, MainActivity::class.java)
+        val buttonLicence: Button = findViewById(R.id.buttonLicence)
 
         buttonDeveloper.setOnClickListener {
             val implicitIntentDeveloper = Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/alexandrawaas"))
             startActivity(implicitIntentDeveloper)
+        }
+
+        buttonLicence.setOnClickListener {
+            val implicitIntentLicence = Intent(Intent.ACTION_VIEW, Uri.parse("https://raw.githubusercontent.com/alexandrawaas/FriendlyNotes/main/app/src/main/licence"))
+            startActivity(implicitIntentLicence)
         }
     }
 }
