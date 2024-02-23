@@ -16,10 +16,13 @@ If a phone number, address or birthday is saved, you can directly call the frien
 <p align="center">
 <img src="https://github.com/alexandrawaas/FriendlyNotes/blob/main/screenshots/Screenshot_20240223_121159.png" width="30%" padding="10px 10px 10px 10px">
    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img src="https://github.com/alexandrawaas/FriendlyNotes/blob/main/screenshots/Screenshot_20240223_105546.png" width="30%" padding="10px 10px 10px 10px">
+<img src="https://github.com/alexandrawaas/FriendlyNotes/blob/main/screenshots/Screenshot_20240223_110934.png" width="30%" padding="10px 10px 10px 10px">
 </p>
 <p align="center">
-<img src="https://github.com/alexandrawaas/FriendlyNotes/blob/main/screenshots/FriendlyNotesDemoVideo.gif" width="100%" padding="10px 10px 10px 10px">
+<img src="https://github.com/alexandrawaas/FriendlyNotes/blob/main/screenshots/Screenshot_20240223_105546.png" width="30%" padding="10px 10px 10px 10px">
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <img src="https://github.com/alexandrawaas/FriendlyNotes/blob/main/screenshots/FriendlyNotesDemoVideo.gif" width="30%" padding="10px 10px 10px 10px">
+
 </p>
 
 ## Contact
