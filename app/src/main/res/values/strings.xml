@@ -22,7 +22,7 @@
     <string name="firstname">Firstname</string>
     <string name="lastname">Lastname</string>
     <string name="add_new_friend">Add new friend</string>
-    <string name="version_number" translatable="false">Version 1.0.0</string>
+    <string name="version_number" translatable="false">Version 0.1.0</string>
     <string name="developer">Developer</string>
     <string name="licence">Licence</string>
     <string name="welcome_title">Welcome!</string>
