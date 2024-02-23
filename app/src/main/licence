@@ -1,13 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta name="viewport" content="width=device-width">
-    <style> body { font-family: sans-serif; } pre { background-color: #eeeeee; padding: 1em; white-space: pre-wrap; word-wrap: break-word; } </style>
-</head>
-<body>
+Notices for: google/material-design-icons, material-components/material-components-android
 
-<h3>Notices for: google/material-design-icons, material-components/material-components-android</h3>
-<pre>
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -209,6 +201,3 @@
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
-</pre>
-</body>
-</html>
