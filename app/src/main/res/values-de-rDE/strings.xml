@@ -43,4 +43,6 @@
     <string name="dialogue_title_firstname">Vorname fehlt</string>
     <string name="dialogue_text_firstname">Bitte gib den Vornamen deines Freundes ein.</string>
     <string name="dialogue_button_ok">OK</string>
+    <string name="change">Ändern</string>
+    <string name="remove">Entfernen</string>
 </resources>

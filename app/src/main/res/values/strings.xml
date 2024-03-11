@@ -44,5 +44,7 @@
     <string name="dialogue_title_firstname">First name is missing</string>
     <string name="dialogue_text_firstname">Please insert a first name.</string>
     <string name="dialogue_button_ok">OK</string>
+    <string name="change">Change</string>
+    <string name="remove">Remove</string>
 
 </resources>

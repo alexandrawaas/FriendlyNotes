@@ -9,6 +9,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.graphics.drawable.toBitmap
@@ -26,6 +27,7 @@ class EditFriendActivity : AppCompatActivity() {
         binding.imageViewPhotoProfile.setImageBitmap(new)
     }
 
+
     private var getContentLauncherEdit = registerForActivityResult(PickPhotoContract())
     { result: Uri? ->
         if (result != null) {
@@ -39,8 +41,7 @@ class EditFriendActivity : AppCompatActivity() {
 
             if(bitmap==null)
             {
-                //TODO: Fehlermeldung
-                println("FEHLER")
+                Toast.makeText(this, "Failed to load image", Toast.LENGTH_SHORT).show()
                 return@registerForActivityResult;
             }
 
@@ -48,7 +49,7 @@ class EditFriendActivity : AppCompatActivity() {
         }
         else
         {
-            println("FEHLER") //TODO: Fehlermeldung
+            Toast.makeText(this, "Failed to load image", Toast.LENGTH_SHORT).show()
         }
     }
 
@@ -94,8 +95,12 @@ class EditFriendActivity : AppCompatActivity() {
         (binding.textfieldAddMonth.editText as? AutoCompleteTextView)?.setAdapter(monthAdapter)
 
 
-        binding.cardViewForImage.setOnClickListener {
+        binding.changePhotoButton.setOnClickListener {
             getContentLauncherEdit.launch(null)
+        }
+
+        binding.removePhotoButton.setOnClickListener {
+            currentBitmap = ResourcesCompat.getDrawable(resources, R.drawable.user, null)?.toBitmap()
         }
 
 
@@ -113,8 +118,12 @@ class EditFriendActivity : AppCompatActivity() {
             } else {
                 val intent = Intent()
 
-                friend.photo=currentBitmap?.encodeBase64()
-                if (currentBitmap==null) currentBitmap = ResourcesCompat.getDrawable(resources, R.drawable.user, null)?.toBitmap()
+                if (currentBitmap==null)
+                {
+                    currentBitmap = ResourcesCompat.getDrawable(resources, R.drawable.user, null)?.toBitmap()
+                }
+
+                friend.photo=Bitmap.createScaledBitmap(currentBitmap!!, 1000, 1000,false).encodeBase64()
                 friend.firstname = binding.textfieldAddFirstname.editText?.text.toString().trim()
                 friend.lastname = binding.textfieldAddLastname.editText?.text.toString().trim()
 

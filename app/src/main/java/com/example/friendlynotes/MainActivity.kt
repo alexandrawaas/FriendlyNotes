@@ -35,7 +35,6 @@ class MainActivity : AppCompatActivity() {
         {
             repository.addFriend(result)
             adapter.updateRecyclerView()
-            println("updated rview")
 
             val gson = Gson()
             val intentRefresh: Intent =
@@ -133,8 +132,6 @@ class MainActivity : AppCompatActivity() {
                 return false
             }
         })
-
-        println(menu)
 
         return super.onCreateOptionsMenu(menu)
     }
